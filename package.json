@@ -4,14 +4,19 @@
   "description": "Taking notes on a web application",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose test/*",
+    "start": "node server.js"
   },
   "author": "Nikhil",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "express-router": "^0.0.1",
+    "fs": "^0.0.1-security",
+    "jest": "^27.4.7",
+    "path": "^0.12.7",
+    "require": "^2.4.20"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nnikhil84/take-my-notes.git"
