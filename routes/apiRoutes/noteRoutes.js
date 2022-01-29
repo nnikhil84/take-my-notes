@@ -5,10 +5,10 @@ const {
   createNewnote,
   validatenote,
 } = require("../../lib/notes.js");
-const notes = require("../../db/db.json");
+const notes = require("../../db/notes.json");
 console.log(notes); //we console log the notes array on the terminal to check functionality
 
-// GET route to get data from db.json
+// GET route to get data from notes.json
 router.get("/notes", (req, res) => {
   if (notes) {
     res.json(notes);
@@ -20,7 +20,7 @@ router.get("/notes", (req, res) => {
   }
 });
 
-// POST route to update data from client to db.json
+// POST route to update data from client to notes.json
 router.post("/notes", (req, res) => {
   if (!validatenote(req.body)) {
     res.status(400).send("The note to POST is not properly formatted.");
@@ -33,7 +33,7 @@ router.post("/notes", (req, res) => {
   }
 });
 
-// DELETE route to update db.json after removing the deleted note identified by ID
+// DELETE route to update notes.json after removing the deleted note identified by ID
 router.delete("/notes/:id", (req, res) => {
   const result = {
     message: "There was an error processing your request", //defining the contents of the result array
